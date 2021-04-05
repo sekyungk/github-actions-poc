@@ -3,7 +3,7 @@ on:
     branches:
       - master
 
-name: Deploy to Amazon S3
+name: Staging Deploy to Amazon S3
 
 jobs:
   deploy:

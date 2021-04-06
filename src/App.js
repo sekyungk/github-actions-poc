@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {process.env.RMS_EXT_API}
+          감ㄴ어리ㅏㅁ어니라ㅓ{process.env.RMS_EXT_API}
         </a>
       </header>
     </div>

@@ -25,7 +25,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: build
-        run: npm install && npm run build $RMS_EXT_API
+        run: npm install && npm run build ${RMS_EXT_API}
         env:
           RMS_EXT_API: 가나다라
 

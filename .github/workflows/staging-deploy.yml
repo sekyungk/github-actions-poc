@@ -10,8 +10,6 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment: staging
-    env:
-      RMS_EXT_API: ${{ secrets.RMS_EXT_API }}
 
     steps:
       - name: Checkout

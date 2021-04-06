@@ -24,5 +24,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
 
+      - name: build
+        run: npm insall && npm run build
+        env:
+          RMS_EXT_API: ${{ secrets.RMS_EXT_API }}
+
       - name: Deploy static site to S3 bucket
-        run: npm install && npm run build && aws s3 sync ./build s3://temp.sekyung.kim
+        run: aws s3 sync ./build s3://temp.sekyung.kim

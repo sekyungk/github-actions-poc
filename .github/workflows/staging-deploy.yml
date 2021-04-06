@@ -10,6 +10,8 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment: staging
+    env:
+      RMS_EXT_API: ${{ secrets.RMS_EXT_API }}
 
     steps:
       - name: Checkout
@@ -20,6 +22,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
 
       - name: Deploy static site to S3 bucket
         run: npm install && npm run build && aws s3 sync ./build s3://temp.sekyung.kim

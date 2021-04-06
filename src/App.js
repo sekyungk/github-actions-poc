@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Reat
+          {process.env.RMS_EXT_API}
         </a>
       </header>
     </div>

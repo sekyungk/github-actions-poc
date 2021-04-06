@@ -5,6 +5,8 @@ on:
 
 name: Staging Deploy to Amazon S3
 
+env:
+  RMS_EXT_API: ${{ secrets.RMS_EXT_API }}
 jobs:
   deploy:
     name: Deploy
@@ -23,9 +25,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: build
-        run: npm install && npm run build ${RMS_EXT_API}
-        env:
-          RMS_EXT_API: 가나다라
+        run: npm install && npm run build
 
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./build s3://temp.sekyung.kim

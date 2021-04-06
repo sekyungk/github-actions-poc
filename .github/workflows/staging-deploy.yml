@@ -23,9 +23,9 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: build
-        run: npm install && $RMS_EXT_API npm run build
+        run: npm install && npm run build
         env:
-          RMS_EXT_API: ${{ secrets.RMS_EXT_API }}
+          REACT_APP_TEST: ${{ secrets.RMS_EXT_API }}
 
       - name: test
         run: echo ${{ secrets.RMS_EXT_API }}

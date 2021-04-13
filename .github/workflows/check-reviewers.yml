@@ -10,4 +10,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - run: echo '${{ toJson(github.event.pull_request.requested_reviewers) }}'
       - run: echo '${{ toJson(github.event.pull_request.requested_reviewers) }}' | jq '. | length'

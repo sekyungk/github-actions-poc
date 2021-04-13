@@ -1,0 +1,17 @@
+on: pull_request
+
+name: Check Reviewers
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: get the count of requested reviewers
+        run: |
+          length=$(echo $requested_reviewers | jq '. | length')
+          echo "length = $length"
+        env:
+          requested_reviewers: ${{ toJson(github.event.pull_request.requested_reviewers) }}

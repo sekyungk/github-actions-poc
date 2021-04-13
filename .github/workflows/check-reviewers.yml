@@ -1,9 +1,12 @@
-on: pull_request
+on:
+  pull_request_review:
+    types: [submitted]
 
 name: Check Reviewers
 
 jobs:
   check:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
 
     steps:
